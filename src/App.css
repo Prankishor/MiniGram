@@ -272,3 +272,22 @@ body {
 .reset:hover {
     opacity: 0.8;
 }
+
+/*Blogs */
+
+.post_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post_card {
+    border: 8px solid #79f859;
+    border-radius: 20px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+img {
+    max-width: 450px;
+}

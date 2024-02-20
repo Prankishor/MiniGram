@@ -32,9 +32,9 @@ const Navbar = () => {
             <div className="navbar_links">
                 {login ? (<>
 
-                    {/* <NavLink to='/dashboard/feed' style={{ textDecoration: "none" }} >
+                    <NavLink to='/dashboard/feed' style={{ textDecoration: "none" }} >
                         <p>Blogs</p>
-                    </NavLink> */}
+                    </NavLink>
                     <NavLink to='/dashboard/write' style={{ textDecoration: "none" }} >
                         <p>Publish</p>
                     </NavLink>
@@ -74,9 +74,9 @@ const Navbar = () => {
                         <div className="navbar_menu_container_links">
                             {login && <>
 
-                                {/* <NavLink to='/dashboard/feed' style={{ textDecoration: "none" }} >
+                                <NavLink to='/dashboard/feed' style={{ textDecoration: "none" }} >
                                     <p>Blogs</p>
-                                </NavLink> */}
+                                </NavLink>
                                 <NavLink to='/dashboard/write' style={{ textDecoration: "none" }} >
                                     <p>Publish</p>
                                 </NavLink>
