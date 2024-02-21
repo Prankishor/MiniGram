@@ -26,7 +26,8 @@ const Navbar = () => {
         <div className="navbar">
             <div className="navbar_logo">
                 <Link to='/' style={{ textDecoration: "none" }}>
-                    <p>Blogit</p>
+                    <p>MiniGram
+                    </p>
                 </Link>
             </div>
             <div className="navbar_links">

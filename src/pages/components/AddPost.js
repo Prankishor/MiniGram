@@ -5,9 +5,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import { loadAllCategories } from '../../services/category-service';
 import { createPost } from '../../services/post-service';
 import { getCurrentUserDetail } from '../../auth';
+//import { Navigate } from 'react-router-dom'
+//import { useNavigate } from 'react-router-dom';
 
 function AddPost() {
 
+    //const navigate = useNavigate();
     const [categories, setCategories] = useState([])
     const [user, setUser] = useState(undefined)
     const [postData, setPostData] = useState({
@@ -52,7 +55,12 @@ function AddPost() {
 
         postData['userId'] = user.id
         createPost(postData).then((data) => {
+            //navigate('/dashboard/feed');
             toast.success("Post Created!")
+            // setTimeout(() => {
+            //     navigate('/dashboard/feed');
+            // }, 1000);
+
         }).catch(e => {
             console.log(e)
         })

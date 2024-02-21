@@ -8,6 +8,19 @@ export const createPost = (postData) => {
 
 //get all posts
 
-export const loadAllPosts = () => {
-    return myAxios.get(`/api/posts`).then((res) => res.data)
+export const loadAllPosts = async (pageNumber, pageSize) => {
+    return await myAxios.get(`/api/posts?pageNumber=${pageNumber}&pageSize=${pageSize}`).then((res) => res.data)
+}
+
+//get single post from id
+
+export const loadPost = async (postid) => {
+    return await privateAxios.get(`/api/posts/${postid}`).then((res) => res.data)
+}
+
+
+//add comment
+
+export const createComment = async (comment, postId) => {
+    return await privateAxios.post(`/api/post/${postId}/comments`, comment)
 }
