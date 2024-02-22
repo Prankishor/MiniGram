@@ -26,7 +26,7 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className="navbar_logo">
-                <Link to='/' style={{ textDecoration: "none" }}>
+                <Link to='/home' style={{ textDecoration: "none" }}>
                     <div className="logo_container">
                         <img className='logo' src={minigramlogo} alt="logo" />
                         <span className="app_name">MiniGram
