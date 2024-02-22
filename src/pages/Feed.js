@@ -41,7 +41,7 @@ function Feed() {
                 pageNumber: data.pageNumber
             })
             setLoading(false);
-            console.log(data);
+            //console.log(data);
 
         }).catch(error => {
             console.log(error)
@@ -59,13 +59,14 @@ function Feed() {
     }
 
     const changePageInfinite = () => {
-        console.log("Page changed")
+        // console.log("Page changed")
         setPage(page + 1)
     }
 
     return (
         <div>
             <ResponsiveAppBar />
+            <div className='posts_heading'>Feed</div>
             <div className='post_container'>
                 {loading ? (
                     <div>
@@ -95,7 +96,7 @@ function Feed() {
                                     <p>{post.content}</p>
                                 </div>
                                 <div className='post_user'>
-                                    <p>Author : <b>{post.user?.name}</b></p>
+                                    <p>Posted By : <b>{post.user?.name}</b></p>
                                 </div>
                                 <div className='post_date'>
                                     <p>{printDate(post.addedDate)}</p>
@@ -113,7 +114,7 @@ function Feed() {
                     </div>
                 )}
             </div>
-            <ScrollToTop smooth color />
+            <ScrollToTop smooth />
         </div>
     );
 }

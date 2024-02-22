@@ -3,7 +3,7 @@ import { useState } from 'react'
 import ResponsiveAppBar from './ResponsiveAppBar';
 import { ToastContainer, toast } from 'react-toastify';
 import { loadAllCategories } from '../../services/category-service';
-import { createPost } from '../../services/post-service';
+import { createPost, uploadPostImage } from '../../services/post-service';
 import { getCurrentUserDetail } from '../../auth';
 //import { Navigate } from 'react-router-dom'
 //import { useNavigate } from 'react-router-dom';
@@ -18,6 +18,7 @@ function AddPost() {
         content: "",
         category: "",
     })
+    const [image, setImage] = useState(null)
 
 
     useEffect(() => {
@@ -53,17 +54,28 @@ function AddPost() {
             return
         }
 
+        if (image.type !== 'image/png' && image.type !== 'image/jpeg' && image.type !== 'image/jpg') {
+            toast.error("Please choose a valid image (JPG/JPEG/PNG)")
+            return
+        }
         postData['userId'] = user.id
         createPost(postData).then((data) => {
-            //navigate('/dashboard/feed');
-            toast.success("Post Created!")
-            // setTimeout(() => {
-            //     navigate('/dashboard/feed');
-            // }, 1000);
+            uploadPostImage(image, data.postId).then((data) => {
+                toast.success("Uploading...")
+            }).catch(e => {
+                toast.error("Picture couldn't be uploaded!")
+                console.log(e)
+            })
+            toast.success("Post Uploaded!")
 
         }).catch(e => {
             console.log(e)
         })
+    }
+
+    const handleFileChange = (e) => {
+        console.log(e.target.files[0])
+        setImage(e.target.files[0])
     }
 
     return (
@@ -89,6 +101,12 @@ function AddPost() {
                         value={postData.content} />
                 </div>
                 <div className='input'>
+                    <input
+                        type='file'
+                        onChange={handleFileChange}
+                    />
+                </div>
+                <div className='input'>
                     <select defaultValue={0} placeholder='Category' onChange={handleCategoryChange}>
                         <option disabled value={0} >--Select category--</option>
                         {
@@ -100,7 +118,7 @@ function AddPost() {
                 </div>
             </div>
             <div className='submit-container'>
-                <div className='submit' onClick={createBlog}>Publish</div>
+                <div className='submit' onClick={createBlog}>Post</div>
             </div>
             <div className='reset-container'>
                 <div className='reset' onClick={handleReset}>Clear</div>

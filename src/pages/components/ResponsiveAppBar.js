@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import { doLogout, getCurrentUserDetail, isLoggedIn } from "../../auth";
+import minigramlogo from '../../assets/minigramlogo.png'
 
 const Navbar = () => {
     const [login, setLogin] = useState(false);
@@ -26,15 +27,18 @@ const Navbar = () => {
         <div className="navbar">
             <div className="navbar_logo">
                 <Link to='/' style={{ textDecoration: "none" }}>
-                    <p>MiniGram
-                    </p>
+                    <div className="logo_container">
+                        <img className='logo' src={minigramlogo} alt="logo" />
+                        <span className="app_name">MiniGram
+                        </span>
+                    </div>
                 </Link>
             </div>
             <div className="navbar_links">
                 {login ? (<>
 
                     <NavLink to='/dashboard/feed' style={{ textDecoration: "none" }} >
-                        <p>Blogs</p>
+                        <p>Feed</p>
                     </NavLink>
                     <NavLink to='/dashboard/write' style={{ textDecoration: "none" }} >
                         <p>Publish</p>
@@ -76,7 +80,7 @@ const Navbar = () => {
                             {login && <>
 
                                 <NavLink to='/dashboard/feed' style={{ textDecoration: "none" }} >
-                                    <p>Blogs</p>
+                                    <p>Feed</p>
                                 </NavLink>
                                 <NavLink to='/dashboard/write' style={{ textDecoration: "none" }} >
                                     <p>Publish</p>

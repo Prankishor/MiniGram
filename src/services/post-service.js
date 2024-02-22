@@ -24,3 +24,25 @@ export const loadPost = async (postid) => {
 export const createComment = async (comment, postId) => {
     return await privateAxios.post(`/api/post/${postId}/comments`, comment)
 }
+
+//add picture
+
+export const uploadPostImage = async (image, postId) => {
+    let formData = new FormData()
+    formData.append("image", image)
+    return await privateAxios.post(`/api/post/image/upload/${postId}`, formData)
+        .then((res) => res.data)
+}
+
+//loadSingleUserPost
+
+export const loadPostUserWise = async (userId) => {
+    return await privateAxios.get(`/api/user/${userId}/posts`, userId).then((res) => res.data)
+}
+
+
+//delete post
+
+export const deletePostById = async (postId) => {
+    return await privateAxios.delete(`/api/posts/${postId}`, postId).then((res) => res.data);
+}
