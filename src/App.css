@@ -449,3 +449,161 @@ img {
 .subhead {
     font-size: large;
 }
+
+
+@media screen and (max-width: 800px) {
+    .navbar_menu {
+        display: block;
+    }
+
+    .navbar_links {
+        display: none;
+    }
+
+    .navbar {
+        width: 90%;
+        height: 10px;
+        margin: 1rem 0px;
+        padding: 1rem 1rem;
+    }
+
+    .navbar_menu_container_links {
+        display: flex;
+        flex-direction: column;
+        text-align: end;
+        padding: 1rem;
+        position: absolute;
+        right: 10px;
+        top: 70px;
+        margin-top: 1rem;
+        min-width: 100px;
+        min-height: 160px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        background-color: #79f859;
+    }
+
+    .navbar_menu_container_links p {
+        text-decoration: none;
+        color: black;
+        margin-bottom: 0.3rem;
+    }
+
+    .app_name {
+        font-size: large;
+    }
+
+    .logo {
+        width: 4rem;
+    }
+
+    .home_heading {
+        margin-top: 5rem;
+        font-size: x-large;
+    }
+
+    .subhead {
+        font-size: small;
+    }
+
+    .home_logo {
+        margin-top: 2rem;
+        max-width: 250px;
+        margin-bottom: 3rem;
+    }
+
+    .posts_heading {
+        font-size: x-large;
+        margin-bottom: 2rem;
+    }
+
+    .post_container {
+        font-size: small;
+    }
+
+    .header div {
+        font-size: large
+    }
+
+    .inputs {
+        margin-top: 55px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .input {
+        width: 300px;
+        height: 40px;
+        background: #eaeaea;
+        border-radius: 6px;
+        padding: 2px;
+    }
+
+    .submit {
+        width: 180px;
+        height: 40px;
+    }
+
+    .reset {
+        width: 180px;
+        height: 40px;
+        margin-bottom: 1rem;
+    }
+
+    .posts_heading {
+        font-size: medium;
+    }
+
+    .post_card {
+        font-size: small;
+        padding: 1rem;
+        margin: 1rem 0;
+        min-width: 280px;
+        max-width: 280px;
+    }
+
+    img {
+        max-width: 250px;
+    }
+
+    .input_textarea {
+        height: 190px;
+        min-width: 200px;
+        max-width: 300px;
+        padding: 2px;
+    }
+
+    .input input {
+        height: 50px;
+        width: 280px;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #797979;
+        font-size: 16px;
+    }
+
+    .input select {
+        height: 40px;
+        width: 200px;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #797979;
+        font-size: 16px;
+    }
+
+
+    .input_textarea textarea {
+        height: 190px;
+        min-width: 300px;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #797979;
+        font-size: 16px;
+        resize: none;
+
+    }
+}

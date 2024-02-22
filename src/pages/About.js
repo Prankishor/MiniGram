@@ -12,7 +12,7 @@ function About() {
                 <div>Frontend: React.js</div>
                 <div>Backend: Springboot</div>
                 <div>Databases: MySQL</div>
-                <div>Authentication & Authorization: Spring Security / JSON Web Tokens</div>
+                <div>Authentication & Authorization: <br></br>Spring Security / JSON Web Tokens</div>
                 <div>Contact: prankishortalukdar0@gmail.com</div>
                 <div>Check out other projects from the developer: </div>
                 <br></br>

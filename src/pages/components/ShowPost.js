@@ -80,7 +80,7 @@ const ShowPost = () => {
                             <p>{post.content}</p>
                         </div>
                         <div className='post_user'>
-                            <p>Author : <b>{post.user?.name}</b></p>
+                            <p>Posted by : <b>{post.user?.name}</b></p>
                         </div>
                         <div className='post_date'>
                             <p>{printDate(post.addedDate)}</p>
