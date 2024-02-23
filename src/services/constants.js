@@ -3,7 +3,7 @@ import { getToken } from '../auth';
 
 //export const BASE_URL = 'http://localhost:9090'
 //export const BASE_URL = 'http://miniapis-env.eba-j3thz9pz.ca-central-1.elasticbeanstalk.com'
-export const BASE_URL = 'https://bloggingbackend-production.up.railway.app/'
+export const BASE_URL = 'https://bloggingbackend-production.up.railway.app'
 
 export const myAxios = axios.create({
     baseURL: BASE_URL
