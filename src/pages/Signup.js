@@ -3,8 +3,10 @@ import { signUp } from '../services/user-service';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ResponsiveAppBar from './components/ResponsiveAppBar';
+import { useNavigate } from "react-router-dom";
 
 function Signup() {
+    const navigate = useNavigate();
     const [userData, setUserData] = useState({
         name: "",
         email: "",
@@ -32,6 +34,15 @@ function Signup() {
 
     const handleSignup = () => {
         //console.log(userData)
+
+        if (userData.name === '' || userData.email === '' || userData.about === '' || userData.password == '') {
+            toast.error("Fields cannot be empty!")
+            return
+        }
+
+        if (userData.password.length < 6 || userData.password.length > 12) {
+            toast.error("Password length should be between 6-12 characters!")
+        }
         toast.info("Setting up your profile...")
         signUp(userData).then((res) => {
             //console.log(res)
@@ -42,6 +53,9 @@ function Signup() {
                 password: "",
                 about: "",
             })
+            navigate("/login")
+
+
         }).catch((e) => {
             console.log(e.response.data)
             console.log("Error log")

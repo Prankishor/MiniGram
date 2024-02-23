@@ -6,11 +6,11 @@ import { loadAllCategories } from '../../services/category-service';
 import { createPost, uploadPostImage } from '../../services/post-service';
 import { getCurrentUserDetail } from '../../auth';
 //import { Navigate } from 'react-router-dom'
-//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function AddPost() {
 
-    //const navigate = useNavigate();
+    const navigate = useNavigate();
     const [categories, setCategories] = useState([])
     const [user, setUser] = useState(undefined)
     const [postData, setPostData] = useState({
@@ -64,17 +64,19 @@ function AddPost() {
             return
         }
 
-        toast.info("Posting your content...")
+        toast.info("Posting your content, please wait...")
         postData['userId'] = user.id
         createPost(postData).then((data) => {
+            toast.info("Uploading your pixels...")
             uploadPostImage(image, data.postId).then((data) => {
                 //toast.success("Uploading...")
                 toast.success("Post Uploaded!")
+                navigate("/dashboard/feed")
+
             }).catch(e => {
                 toast.error("Picture couldn't be uploaded!")
                 console.log(e)
             })
-            toast.info("Uploading your pixels...")
         }).catch(e => {
             console.log(e)
         })
