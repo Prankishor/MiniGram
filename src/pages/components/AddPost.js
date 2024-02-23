@@ -54,6 +54,11 @@ function AddPost() {
             return
         }
 
+        if (image === null) {
+            toast.error("Please upload an image");
+            return
+        }
+
         if (image.type !== 'image/png' && image.type !== 'image/jpeg' && image.type !== 'image/jpg') {
             toast.error("Please choose a valid image (JPG/JPEG/PNG)")
             return
