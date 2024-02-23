@@ -63,6 +63,8 @@ function AddPost() {
             toast.error("Please choose a valid image (JPG/JPEG/PNG)")
             return
         }
+
+        toast.info("Posting your content...")
         postData['userId'] = user.id
         createPost(postData).then((data) => {
             uploadPostImage(image, data.postId).then((data) => {

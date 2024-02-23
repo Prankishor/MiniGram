@@ -34,6 +34,7 @@ function Login() {
             toast.error("Username or Password cannot be empty!")
         }
 
+        toast.info("Logging in ...")
         login(userData).then((token) => {
             //console.log("Login log")
             //console.log(token)

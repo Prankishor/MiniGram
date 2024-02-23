@@ -32,7 +32,7 @@ function Signup() {
 
     const handleSignup = () => {
         //console.log(userData)
-
+        toast.info("Setting up your profile...")
         signUp(userData).then((res) => {
             //console.log(res)
             toast.success("Registered Successfully !")

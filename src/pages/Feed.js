@@ -110,7 +110,7 @@ function Feed() {
                     </InfiniteScroll>
                 ) : (
                     <div>
-                        <h1>No blogs available</h1>
+                        <h1>No posts available</h1>
                     </div>
                 )}
             </div>
