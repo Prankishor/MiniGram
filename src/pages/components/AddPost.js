@@ -68,13 +68,13 @@ function AddPost() {
         postData['userId'] = user.id
         createPost(postData).then((data) => {
             uploadPostImage(image, data.postId).then((data) => {
-                toast.success("Uploading...")
+                //toast.success("Uploading...")
+                toast.success("Post Uploaded!")
             }).catch(e => {
                 toast.error("Picture couldn't be uploaded!")
                 console.log(e)
             })
-            toast.success("Post Uploaded!")
-
+            toast.info("Uploading your pixels...")
         }).catch(e => {
             console.log(e)
         })
