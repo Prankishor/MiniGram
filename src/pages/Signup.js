@@ -42,6 +42,7 @@ function Signup() {
 
         if (userData.password.length < 6 || userData.password.length > 12) {
             toast.error("Password length should be between 6-12 characters!")
+            return
         }
         toast.info("Setting up your profile...")
         signUp(userData).then((res) => {
