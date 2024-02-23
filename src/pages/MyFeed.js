@@ -21,7 +21,7 @@ function MyFeed() {
 
     const loadPostData = () => {
         loadPostUserWise(getCurrentUserDetail().id).then((data) => {
-            console.log(data);
+            //console.log(data);
             setPosts([...data].reverse());
             setLoading(false)
         }).catch(e => {

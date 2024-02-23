@@ -20,7 +20,7 @@ const ShowPost = () => {
         setLoading(true);
         //load post
         loadPost(postId).then((data) => {
-            console.log(data)
+            //console.log(data)
             setPost(data)
             setComments(data.comments)
             setLoading(false);
@@ -41,7 +41,7 @@ const ShowPost = () => {
         }
 
         createComment(newComment, post.postId).then((data) => {
-            console.log(data)
+            //console.log(data)
             toast.success("Comment added")
             setComments([...comments, data.data])
             setNewComment({ content: '' })

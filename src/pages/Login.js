@@ -27,18 +27,18 @@ function Login() {
     }
 
     const handleLogIn = () => {
-        console.log("User Data: ")
-        console.log(userData)
+        //console.log("User Data: ")
+        //console.log(userData)
 
         if (userData.username === "" || userData.password === "") {
             toast.error("Username or Password cannot be empty!")
         }
 
         login(userData).then((token) => {
-            console.log("Login log")
-            console.log(token)
+            //console.log("Login log")
+            //console.log(token)
             doLogin(token, () => {
-                console.log("JWT Token saved in local storage")
+                //console.log("JWT Token saved in local storage")
                 navigate("/dashboard/feed")
             })
             toast.success("Logged In Successfully!")

@@ -31,10 +31,10 @@ function Signup() {
     }
 
     const handleSignup = () => {
-        console.log(userData)
+        //console.log(userData)
 
         signUp(userData).then((res) => {
-            console.log(res)
+            //console.log(res)
             toast.success("Registered Successfully !")
             setUserData({
                 name: "",

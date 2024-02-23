@@ -11,7 +11,7 @@ function Home() {
                 <img className='home_logo' src={minigramlogo} alt='logo' />
                 <span>MiniGram v1</span>
                 <br></br>
-                <span>Developerd by Prankishore Talukdar</span>
+                <span>Developed by Prankishore Talukdar</span>
                 <span>Powered by React.js</span>
             </div>
         </div>

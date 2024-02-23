@@ -9,7 +9,7 @@ function Profile() {
     const [loading, setLoading] = useState(false)
     useEffect(() => {
         setLoading(true)
-        console.log(getCurrentUserDetail());
+        //console.log(getCurrentUserDetail());
         setUser(getCurrentUserDetail())
         setLoading(false)
     }, [])
