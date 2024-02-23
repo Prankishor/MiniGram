@@ -26,7 +26,7 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className="navbar_logo">
-                <Link to='/home' style={{ textDecoration: "none" }}>
+                <Link to='/' style={{ textDecoration: "none" }}>
                     <div className="logo_container">
                         <img className='logo' src={minigramlogo} alt="logo" />
                         <span className="app_name">MiniGram
@@ -49,12 +49,12 @@ const Navbar = () => {
                     <NavLink to='/dashboard/profile' style={{ textDecoration: "none" }} >
                         <p>Profile</p>
                     </NavLink>
-                    <NavLink onClick={logout} to='/home' style={{ textDecoration: "none" }} >
+                    <NavLink onClick={logout} to='/' style={{ textDecoration: "none" }} >
                         <p>Logout</p>
                     </NavLink>
                 </>) :
                     (<>
-                        <NavLink to='/home' style={{ textDecoration: "none" }} >
+                        <NavLink to='/' style={{ textDecoration: "none" }} >
                             <p>Home</p>
                         </NavLink>
                         <NavLink to='/login' style={{ textDecoration: "none" }} >
@@ -91,12 +91,12 @@ const Navbar = () => {
                                 <NavLink to='/dashboard/profile' style={{ textDecoration: "none" }} >
                                     <p>Profile</p>
                                 </NavLink>
-                                <NavLink onClick={logout} to="/home" style={{ textDecoration: "none" }} >
+                                <NavLink onClick={logout} to="/" style={{ textDecoration: "none" }} >
                                     <p>Logout</p>
                                 </NavLink>
                             </>}
                             {!login && <>
-                                <NavLink to='/home' style={{ textDecoration: "none" }} >
+                                <NavLink to='/' style={{ textDecoration: "none" }} >
                                     <p>Home</p>
                                 </NavLink>
                                 <NavLink to='/login' style={{ textDecoration: "none" }} >
